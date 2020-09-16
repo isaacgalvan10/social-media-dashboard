@@ -1,0 +1,31 @@
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 50px;
+}
+
+header h1 {
+  font-size: 38px;
+}
+
+header p {
+  font-size: 20px;
+  color: grey;
+}
+
+header span {
+  color: grey;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=light.css.map */
