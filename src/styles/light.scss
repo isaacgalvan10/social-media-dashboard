@@ -7,7 +7,6 @@ $lime-green: hsl(163, 72%, 41%);
 $bright-red: hsl(356, 69%, 56%);
 $facebook: hsl(208, 92%, 53%);
 $twitter: hsl(203, 89%, 53%);
-$instagram: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
 $youtube: hsl(348, 97%, 39%);
 
 .container {
@@ -56,20 +55,39 @@ header {
 .grid-container {
   display: flex;
   flex-flow: column;
+  align-items: center;
 
   .card {
     background-color: $very-pale-blue;
+    transition: background-color 0.3s;
+    position: relative;
     width: 100%;
+    max-width: 325px;
     height: 260px;
     border-radius: 5px;
+    overflow: hidden;
     text-align: center;
     margin-bottom: 25px;
+
+    ::before {
+      display: block;
+      width: 100%;
+      height: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+    }
 
     .social {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: 40px;
+
+      .logos {
+        margin-right: 10px;
+      }
 
       .name {
         color: $dark-grayish-blue;
@@ -94,18 +112,19 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      .arrows {
+        margin-right: 5px;
+      }
     }
 
   }
   
   .card-1 {
-    border-top: 5px solid $facebook;
     margin-top: -50px;
 
-    .fa-facebook-square {
-      color: $facebook;
-      margin-right: 10px;
-      font-size: 1.5rem;
+    ::before {
+      background: $facebook;
     }
 
     .daily {
@@ -119,12 +138,9 @@ header {
   }
 
   .card-2 {
-    border-top: 5px solid $twitter;
 
-    .fa-twitter {
-      color: $twitter;
-      margin-right: 10px;
-      font-size: 1.5rem;
+    ::before {
+      background: $twitter;
     }
 
     .daily {
@@ -138,16 +154,29 @@ header {
   }
 
   .card-3 {
-    border-top: 5px solid $instagram;
 
-    .fa-instagram {
-      color: $instagram;
-      margin-right: 10px;
-      font-size: 1.5rem;
+    ::before {
+      background-image: linear-gradient(to right, #fdc468, #df4996);
     }
 
     .daily {
       color: $lime-green;
+      font-weight: 700;
+
+      .fa-sort-up {
+        margin: 10px 5px 0 0;
+      }
+    }
+  }
+
+  .card-4 {
+
+    ::before {
+      background: $youtube;
+    }
+
+    .daily {
+      color: $bright-red;
       font-weight: 700;
 
       .fa-sort-up {

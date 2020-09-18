@@ -56,15 +56,33 @@ header .toggle span {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .grid-container .card {
   background-color: #f5f7ff;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  position: relative;
   width: 100%;
+  max-width: 325px;
   height: 260px;
   border-radius: 5px;
+  overflow: hidden;
   text-align: center;
   margin-bottom: 25px;
+}
+
+.grid-container .card ::before {
+  display: block;
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
 }
 
 .grid-container .card .social {
@@ -78,6 +96,10 @@ header .toggle span {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 40px;
+}
+
+.grid-container .card .social .logos {
+  margin-right: 10px;
 }
 
 .grid-container .card .social .name {
@@ -110,15 +132,16 @@ header .toggle span {
           align-items: center;
 }
 
+.grid-container .card .daily .arrows {
+  margin-right: 5px;
+}
+
 .grid-container .card-1 {
-  border-top: 5px solid #198ff5;
   margin-top: -50px;
 }
 
-.grid-container .card-1 .fa-facebook-square {
-  color: #198ff5;
-  margin-right: 10px;
-  font-size: 1.5rem;
+.grid-container .card-1 ::before {
+  background: #198ff5;
 }
 
 .grid-container .card-1 .daily {
@@ -130,14 +153,8 @@ header .toggle span {
   margin: 10px 5px 0 0;
 }
 
-.grid-container .card-2 {
-  border-top: 5px solid #1ca0f2;
-}
-
-.grid-container .card-2 .fa-twitter {
-  color: #1ca0f2;
-  margin-right: 10px;
-  font-size: 1.5rem;
+.grid-container .card-2 ::before {
+  background: #1ca0f2;
 }
 
 .grid-container .card-2 .daily {
@@ -149,14 +166,9 @@ header .toggle span {
   margin: 10px 5px 0 0;
 }
 
-.grid-container .card-3 {
-  border-top: 5px solid linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-.grid-container .card-3 .fa-instagram {
-  color: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  margin-right: 10px;
-  font-size: 1.5rem;
+.grid-container .card-3 ::before {
+  background-image: -webkit-gradient(linear, left top, right top, from(#fdc468), to(#df4996));
+  background-image: linear-gradient(to right, #fdc468, #df4996);
 }
 
 .grid-container .card-3 .daily {
@@ -165,6 +177,19 @@ header .toggle span {
 }
 
 .grid-container .card-3 .daily .fa-sort-up {
+  margin: 10px 5px 0 0;
+}
+
+.grid-container .card-4 ::before {
+  background: #c4032a;
+}
+
+.grid-container .card-4 .daily {
+  color: #dc414c;
+  font-weight: 700;
+}
+
+.grid-container .card-4 .daily .fa-sort-up {
   margin: 10px 5px 0 0;
 }
 /*# sourceMappingURL=light.css.map */
