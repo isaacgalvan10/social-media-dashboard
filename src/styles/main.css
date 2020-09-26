@@ -1,3 +1,20 @@
+html {
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --top-bg-color: hsl(225, 100%, 98%);
+  --card: hsl(225, 100%, 98%);
+  --subtext: hsl(228, 12%, 44%);
+  --text: hsl(230, 17%, 14%);
+  background: #fff;
+}
+
+html[data-theme='dark'] {
+  --top-bg-color: hsl(232, 19%, 15%);
+  --card: hsl(228, 28%, 20%);
+  --subtext: hsl(228, 34%, 66%);
+  --text: hsl(0, 0%, 100%);
+  background: #1e202a;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 20px;
@@ -15,37 +32,91 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 50px 0 50px 0;
-  background-color: #f5f7ff;
+  background-color: var(--top-bg-color);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 
 header h1 {
   font-size: 1.4rem;
   margin-bottom: 10px;
   font-weight: 700;
-  color: #1e202a;
+  color: var(--text);
 }
 
 header p {
   font-size: 1.1rem;
-  color: #63687e;
+  color: var(--subtext);
   font-weight: 700;
 }
 
 header .seperator {
   margin-top: 25px;
-  border-bottom: 1px solid #63687e;
+  border-bottom: 1px solid var(--subtext);
 }
 
 header .toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 25px 0 50px 0;
 }
 
 header .toggle span {
   font-size: 1.1rem;
-  color: #63687e;
+  color: var(--subtext);
   font-weight: 700;
+}
+
+header .toggle input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+header .toggle label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: #aeb3cb;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+}
+
+header .toggle label:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: var(--card);
+  border-radius: 90px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+header .toggle input:checked + label {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#378fe6), to(#3eda82));
+  background-image: linear-gradient(#378fe6, #3eda82);
+}
+
+header .toggle input:checked + label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  background: var(--card);
+}
+
+header .toggle label:active:after {
+  width: 45px;
 }
 
 .grid-container {
@@ -62,7 +133,7 @@ header .toggle span {
 }
 
 .grid-container .card {
-  background-color: #f5f7ff;
+  background-color: var(--card);
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   position: relative;
@@ -103,18 +174,19 @@ header .toggle span {
 }
 
 .grid-container .card .social .name {
-  color: #63687e;
+  color: var(--subtext);
   font-weight: 700;
 }
 
 .grid-container .card .number {
+  color: var(--text);
   margin: 25px 0 10px 0;
   font-size: 4rem;
   font-weight: 700;
-  color: #1e202a;
 }
 
 .grid-container .card .subtitle {
+  color: var(--subtext);
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-bottom: 25px;
@@ -197,7 +269,7 @@ header .toggle span {
   font-size: 1.4rem;
   margin-bottom: 20px;
   font-weight: 700;
-  color: #63687e;
+  color: var(--text);
 }
 
 #overview-section .grid-container {
@@ -214,7 +286,7 @@ header .toggle span {
 }
 
 #overview-section .grid-container .sm-card {
-  background-color: #f5f7ff;
+  background-color: var(--card);
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
   position: relative;
@@ -242,13 +314,13 @@ header .toggle span {
 #overview-section .grid-container .sm-card .sm-left .sm-title {
   margin-bottom: 20px;
   font-weight: 700;
-  color: #63687e;
+  color: var(--subtext);
 }
 
 #overview-section .grid-container .sm-card .sm-left .sm-number {
   font-size: 2rem;
   font-weight: 700;
-  color: #1e202a;
+  color: var(--text);
 }
 
 #overview-section .grid-container .sm-card .sm-right {
@@ -286,4 +358,24 @@ header .toggle span {
 #overview-section .grid-container .sm-card-3 .sm-right .logos {
   right: -40px;
 }
-/*# sourceMappingURL=light.css.map */
+
+#overview-section .grid-container .sm-card-4 .sm-right .logos {
+  right: -40px;
+}
+
+#overview-section .grid-container .sm-card-5 .sm-right .logos {
+  right: -35px;
+}
+
+#overview-section .grid-container .sm-card-6 .sm-right .sm-percent .today {
+  color: #dc414c;
+}
+
+#overview-section .grid-container .sm-card-7 .sm-right .logos {
+  right: -15px;
+}
+
+#overview-section .grid-container .sm-card-8 .sm-right .logos {
+  right: -25px;
+}
+/*# sourceMappingURL=main.css.map */
