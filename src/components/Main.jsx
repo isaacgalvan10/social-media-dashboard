@@ -76,10 +76,61 @@ class Main extends Component {
             </div>
           </div>
         </section>
-        <section className="overview-section">
+        <section id="overview-section" className="container">
           <h1>Overview - Today</h1>
           <div className="grid-container">
-            <div className="sm-card sm-"></div>
+            <div className="sm-card sm-card-1">
+              <div className="sm-left">
+                <p className="sm-title">Page Views</p>
+                <p className="sm-number">98</p>
+              </div>
+              <div className="sm-right">
+                <img className="logos" src={FacebookLogo} />
+                <div className="sm-percent">
+                  <img className="arrows" src={IconUp} />
+                  <p className="today">3%</p>
+                </div>
+              </div>
+            </div>
+            <div className="sm-card sm-card-2">
+              <div className="sm-left">
+                <p className="sm-title">Likes</p>
+                <p className="sm-number">100</p>
+              </div>
+              <div className="sm-right">
+                <img className="logos" src={FacebookLogo} />
+                <div className="sm-percent">
+                  <img className="arrows" src={IconDown} />
+                  <p className="today">3%</p>
+                </div>
+              </div>
+            </div>
+            <div className="sm-card sm-card-3">
+              <div className="sm-left">
+                <p className="sm-title">Likes</p>
+                <p className="sm-number">5462</p>
+              </div>
+              <div className="sm-right">
+                <img className="logos" src={InstagramLogo} />
+                <div className="sm-percent">
+                  <img className="arrows" src={IconUp} />
+                  <p className="today">2020%</p>
+                </div>
+              </div>
+            </div>
+            <div className="sm-card sm-card-1">
+              <div className="sm-left">
+                <p className="sm-title">Page Views</p>
+                <p className="sm-number">98</p>
+              </div>
+              <div className="sm-right">
+                <img className="logos" src={FacebookLogo} />
+                <div className="sm-percent">
+                  <img className="arrows" src={IconUp} />
+                  <p className="today">3%</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>

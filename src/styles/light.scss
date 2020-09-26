@@ -185,3 +185,91 @@ header {
     }
   }
 }
+
+#overview-section {
+  h1 {
+    font-size: 1.4rem;
+    margin-bottom:20px;
+    font-weight: 700;
+    color: $dark-grayish-blue;
+  }
+
+  .grid-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .sm-card {
+      background-color: $very-pale-blue;
+      transition: background-color 0.3s;
+      position: relative;
+      width: 100%;
+      max-width: 325px;
+      height: 120px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .sm-left {
+        margin-left: 20px;
+
+        .sm-title {
+          margin-bottom: 20px;
+          font-weight: 700;
+          color: $dark-grayish-blue;
+        }
+
+        .sm-number {
+          font-size: 2rem;
+          font-weight: 700;
+          color: $very-dark-blue;
+        }
+      }
+
+      .sm-right {
+        margin-right: 20px;
+
+        .logos {
+          margin-bottom: 20px;
+          position: relative;
+          right: -10px;
+        }
+
+        .sm-percent {
+          display: flex;
+          align-items: center;
+
+          .arrows {
+            margin-right: 3px;
+          }
+
+          .today {
+            color: $lime-green;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .sm-card-2 {
+      .sm-right {
+        .sm-percent {
+          .today {
+            color: $bright-red;
+          }
+        }
+      }
+    }
+
+    .sm-card-3 {
+      .sm-right {
+        .logos {
+          right: -40px;
+        }
+      }
+    }
+  }
+}
