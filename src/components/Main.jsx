@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import FacebookLogo from '../assets/icon-facebook.svg';
 import TwitterLogo from '../assets/icon-twitter.svg';
 import InstagramLogo from '../assets/icon-instagram.svg';
@@ -13,19 +13,19 @@ function Main() {
   function handleChange() {
     let checkbox = document.querySelector('input[name=theme]');
 
-    checkbox.addEventListener('change', function() {
-        if(this.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-        }
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
     })
   }
 
   return (
     <div className="bg-main">
       <header>
-        <div className="container">
+        <div className="heading-container">
           <div className="titles">
             <h1>Social Media Dashboard</h1>
             <p>Total Followers: 23,004</p>
@@ -33,10 +33,10 @@ function Main() {
           <div className="seperator"></div>
           <div className="toggle">
             <span>Dark Mode</span>
-            <input type="checkbox" 
-            id="switch" 
-            name="theme"
-            onChange={handleChange}/>
+            <input type="checkbox"
+              id="switch"
+              name="theme"
+              onChange={handleChange} />
             <label htmlFor="switch">Toggle</label>
           </div>
         </div>
@@ -58,7 +58,7 @@ function Main() {
           <div className="card card-2">
             <div className="social">
               <img className="logos" src={TwitterLogo} />
-              <p className="name">@isaacg</p>
+              <p className="name">@isaacgdev</p>
             </div>
             <p className="number">1019</p>
             <p className="subtitle">Followers</p>
@@ -93,9 +93,9 @@ function Main() {
           </div>
         </div>
       </section>
-      <section id="overview-section" className="container">
-        <h1>Overview - Today</h1>
-        <div className="grid-container">
+      <section id="overview-section">
+        <h1 className="heading-container">Overview - Today</h1>
+        <div className="sm-grid-container container">
           <div className="sm-card sm-card-1">
             <div className="sm-left">
               <p className="sm-title">Page Views</p>
