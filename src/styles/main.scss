@@ -14,6 +14,7 @@ html {
   --very-pale-blue: hsl(225, 100%, 98%);
   --top-bg-color: hsl(225, 100%, 98%);
   --card: hsl(225, 100%, 98%);
+  --card-hover: hsl(232, 33%, 91%);
   --subtext: hsl(228, 12%, 44%);
   --text: hsl(230, 17%, 14%);
   background: $bg;
@@ -22,6 +23,7 @@ html {
 html[data-theme='dark'] {
   --top-bg-color: hsl(232, 19%, 15%);
   --card: hsl(228, 28%, 20%);
+  --card-hover: hsl(228, 26%, 27%);
   --subtext: hsl(228, 34%, 66%);
   --text: hsl(0, 0%, 100%);
   background: $very-dark-blue;
@@ -143,6 +145,11 @@ header {
       top: 0;
       left: 0;
       content: "";
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--card-hover);
     }
 
     .social {
@@ -278,6 +285,11 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      &:hover {
+        cursor: pointer;
+        background-color: var(--card-hover);
+      }  
 
       .sm-left {
         margin-left: 20px;
